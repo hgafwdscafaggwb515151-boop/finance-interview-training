@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#123c55" />
+  <title>财务会计助理虚拟面试训练</title>
+  <meta name="description" content="面向经管类大学生的财务会计助理岗位模拟面试与复盘训练系统" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <section id="welcome" class="screen welcome">
+      <nav><div class="brand"><span class="brand-mark">F</span><span>财务面试实验室</span></div><span class="status-dot">训练模式 · 本地记录</span></nav>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">FINANCE INTERVIEW PRACTICE / 01</p>
+          <h1>把每一次回答，<br><em>练成可验证的能力。</em></h1>
+          <p class="intro">为财务会计助理实习岗位设计的 8 题模拟面试。用真实工作情境练习表达、合规判断与沟通处理。</p>
+          <div class="hero-actions"><button class="primary" id="startBtn">开始本次训练 <span>→</span></button><button class="text-btn" id="guideBtn">查看岗位要点</button></div>
+        </div>
+        <aside class="brief-card">
+          <div class="card-top"><span>目标岗位</span><b>财务会计助理 · 实习生</b></div>
+          <div class="brief-stats"><div><strong>8</strong><span>情境题</span></div><div><strong>5</strong><span>评分维度</span></div><div><strong>25</strong><span>总分</span></div></div>
+          <div class="focus"><span>本次训练重点</span><p>报销审核 · 数据核对 · 合规沟通</p></div>
+        </aside>
+      </div>
+      <div class="principles"><span>你将被评价的能力</span><div>岗位匹配 <i>·</i> 表达逻辑 <i>·</i> 经历具体性 <i>·</i> 合规意识 <i>·</i> 沟通处理</div></div>
+    </section>
+
+    <section id="interview" class="screen interview hidden">
+      <header class="interview-header"><div class="brand"><span class="brand-mark">F</span><span>财务面试实验室</span></div><div class="session"><span id="questionCounter">01 / 08</span><div class="progress"><i id="progressBar"></i></div><span id="timer">12:00</span></div><button class="quiet-btn" id="exitBtn">结束训练</button></header>
+      <div class="interview-layout">
+        <aside class="interviewer"><div class="avatar">林</div><p class="role">虚拟面试官</p><h2>林老师</h2><p class="subtle">财务部招聘专员</p><div class="interviewer-note"><span>面试提示</span><p>尽量用真实经历支撑观点。情景题请说明你的处理顺序和沟通方式。</p></div></aside>
+        <article class="question-panel"><div class="question-meta"><span id="questionTag">岗位认知</span><span id="dimensionTag">岗位匹配 · 表达逻辑</span></div><h1 id="questionText"></h1><p class="question-hint" id="questionHint"></p><div class="answer-box"><label for="answer">你的回答</label><textarea id="answer" placeholder="请在这里作答…"></textarea><div><span id="wordCount">0 字</span><span>建议 100–300 字</span></div></div><div class="question-actions"><button class="text-btn" id="prevBtn">← 上一题</button><button class="primary" id="nextBtn">下一题 <span>→</span></button></div></article>
+      </div>
+    </section>
+
+    <section id="report" class="screen report hidden">
+      <nav><div class="brand"><span class="brand-mark">F</span><span>财务面试实验室</span></div><span class="status-dot">训练已完成</span></nav>
+      <div class="report-heading"><div><p class="eyebrow">PRACTICE REPORT / 本次复盘</p><h1>你的面试表现，<em>有了清晰刻度。</em></h1><p id="reportDate" class="subtle"></p></div><button class="quiet-btn" id="restartBtn">重新训练</button></div>
+      <div class="score-overview"><div class="total-score"><span>综合得分</span><strong id="totalScore">0</strong><small>/ 25</small><p id="scoreLabel"></p></div><div class="radar-wrap"><canvas id="radar" width="330" height="270"></canvas></div><div class="next-step"><span>下一步建议</span><p id="nextStep"></p><button class="text-btn" id="saveBtn">保存本次记录</button></div></div>
+      <div class="section-heading"><h2>五维能力画像</h2><p>根据作答中的岗位关键词、处理步骤与表达结构生成。</p></div><div id="dimensionCards" class="dimension-cards"></div>
+      <div class="section-heading"><h2>逐题反馈</h2><p>优先重答得分最低的 2–3 题，观察处理逻辑是否更完整。</p></div><div id="questionFeedback" class="feedback-list"></div>
+      <footer>本页面为竞赛演示原型。评分基于内置规则库生成，正式版本可接入 AI 追问与语音分析。</footer>
+    </section>
+  </main>
+  <div class="modal hidden" id="guideModal"><div class="modal-card"><button class="close" id="closeGuide">×</button><p class="eyebrow">岗位速览</p><h2>财务会计助理要做什么？</h2><ul><li>初审报销材料，核对发票、金额、日期和审批信息。</li><li>整理费用数据，协助月末对账，确保记录准确可追溯。</li><li>按规范归档凭证，在异常场景中坚持合规、及时上报。</li></ul><button class="primary" id="guideStart">我了解了，开始训练</button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
